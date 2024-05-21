@@ -28,6 +28,27 @@ const resolvers = {
         author: (parent) => {
             return db.authors.find(author => author.id == parent.author_id)
         }
+    },
+    Mutation: {
+        addAuthor(_, args) {
+            let author = args.author;
+            db.authors.push(author);
+            return author
+        },
+        deleteAuthor(_, args) {
+            db.authors = db.authors.filter(au => au.id != args.id)
+            return db.authors
+        },
+        updateAuthor(_, args) {
+            db.authors = db.authors.map((au) => {
+                if(args.id == au.id) {
+                    return { ...au, ...args.edit }
+                }
+                return au
+            })
+
+            return db.authors.find(au => au.id == args.id )
+        }
     }
 }
 
