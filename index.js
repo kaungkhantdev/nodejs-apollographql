@@ -10,7 +10,25 @@ import db from './_db.js';
 const resolvers = {
     Query: {
         games: () => db.games,
+        authors: () => db.authors,
+        reviews: () => db.reviews,
+        review: (_, args) => {
+            return db.reviews.find((review) => review.id == args.id)
+        }
     },
+    Review: {
+        author: (parent) => {
+            return db.authors.find(author => author.id == parent.author_id)
+        }
+    },
+    Game: {
+        reviews: (parent) => {
+            return db.reviews.filter(review => review.game_id == parent.id)
+        },
+        author: (parent) => {
+            return db.authors.find(author => author.id == parent.author_id)
+        }
+    }
 }
 
 const server = new ApolloServer({

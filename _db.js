@@ -1,9 +1,9 @@
 let games = [
-    {id: '1', title: 'Zelda, Tears of the Kingdom', platform: ['Switch']},
-    {id: '2', title: 'Final Fantasy 7 Remake', platform: ['PS5', 'Xbox']},
-    {id: '3', title: 'Elden Ring', platform: ['PS5', 'Xbox', 'PC']},
-    {id: '4', title: 'Mario Kart', platform: ['Switch']},
-    {id: '5', title: 'Pokemon Scarlet', platform: ['PS5', 'Xbox', 'PC']},
+    {id: '1', title: 'Zelda, Tears of the Kingdom', platform: ['Switch'], author_id: '1'},
+    {id: '2', title: 'Final Fantasy 7 Remake', platform: ['PS5', 'Xbox'], author_id: '2'},
+    {id: '3', title: 'Elden Ring', platform: ['PS5', 'Xbox', 'PC'], author_id: '3'},
+    {id: '4', title: 'Mario Kart', platform: ['Switch'], author_id: '3'},
+    {id: '5', title: 'Pokemon Scarlet', platform: ['PS5', 'Xbox', 'PC'], author_id: '1'},
   ]
   
   let authors = [
